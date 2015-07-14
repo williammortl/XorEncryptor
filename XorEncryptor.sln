@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XorEncryptor", "XorEncryptor\XorEncryptor.csproj", "{ACB386E3-3E9D-478D-9D7B-DE7462CC562D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XorEncryptionLibrary", "XorEncryptionLibrary\XorEncryptionLibrary.csproj", "{A3755CB8-8FFD-4542-BE8D-1988443A430E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XorEncryptionLibrary.Test", "XorEncryptionLibrary.Test\XorEncryptionLibrary.Test.csproj", "{FD824FE2-EA75-4563-ACBB-FB53B6D79CEE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ACB386E3-3E9D-478D-9D7B-DE7462CC562D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACB386E3-3E9D-478D-9D7B-DE7462CC562D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACB386E3-3E9D-478D-9D7B-DE7462CC562D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACB386E3-3E9D-478D-9D7B-DE7462CC562D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3755CB8-8FFD-4542-BE8D-1988443A430E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3755CB8-8FFD-4542-BE8D-1988443A430E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3755CB8-8FFD-4542-BE8D-1988443A430E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3755CB8-8FFD-4542-BE8D-1988443A430E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD824FE2-EA75-4563-ACBB-FB53B6D79CEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD824FE2-EA75-4563-ACBB-FB53B6D79CEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD824FE2-EA75-4563-ACBB-FB53B6D79CEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
