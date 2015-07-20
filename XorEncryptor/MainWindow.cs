@@ -39,6 +39,19 @@
         /// <param name="e">event params</param>
         private void sourceFile_TextChanged(object sender, EventArgs e)
         {
+            String inputDirectory = Path.GetDirectoryName(this.sourceFile.Text).Trim();
+            if ((inputDirectory != String.Empty) && (Directory.Exists(inputDirectory) == true))
+            {
+                String outputFile = Path.GetFileName(this.destFile.Text).Trim();
+                if (outputFile != String.Empty)
+                {
+                    this.destFile.Text = Path.Combine(inputDirectory, outputFile);
+                }
+                else
+                {
+                    this.destFile.Text = inputDirectory + "\\";
+                }
+            }
             this.XorButtonEnabled();
         }
 
@@ -148,7 +161,7 @@
             dlg.Filter = "All Files (.*)|*.*";
             dlg.FilterIndex = 0;
             dlg.Multiselect = false;
-            dlg.InitialDirectory = (this.keyFile.Text.Trim() == String.Empty) ? Environment.CurrentDirectory : Path.GetDirectoryName(this.keyFile.Text);
+            dlg.InitialDirectory = (this.keyFile.Text.Trim() == String.Empty) ? ((this.sourceFile.Text.Trim() == String.Empty) ? Environment.CurrentDirectory : Path.GetDirectoryName(this.sourceFile.Text)) : Path.GetDirectoryName(this.keyFile.Text);
             if (dlg.ShowDialog() == DialogResult.OK)
             {
                 this.keyFile.Text = dlg.FileName;
@@ -210,7 +223,7 @@
             Boolean xorButtonEnabled = false;
 
             // button enabled logic
-            if ((this.sourceFile.Text.Trim() != String.Empty) && (this.destFile.Text.Trim() != String.Empty))
+            if ((this.sourceFile.Text.Trim() != String.Empty) && (File.Exists(this.sourceFile.Text) == true) && (Path.GetFileName(this.destFile.Text).Trim() != String.Empty))
             {
                 switch (this.keyType.SelectedItem.ToString().Trim())
                 {
