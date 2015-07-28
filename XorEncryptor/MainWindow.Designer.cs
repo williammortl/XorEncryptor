@@ -210,6 +210,8 @@
             this.Controls.Add(this.keyFile);
             this.Controls.Add(this.keyText);
             this.Controls.Add(this.sourceFile);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "MainWindow";
             this.Text = "Xor Encryptor / Decryptor by William Mortl";
             this.Load += new System.EventHandler(this.MainWindow_Load);
