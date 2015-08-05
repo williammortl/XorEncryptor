@@ -139,14 +139,16 @@
         /// <param name="e">event params</param>
         private void browseSource_Click(object sender, EventArgs e)
         {
-            OpenFileDialog dlg = new OpenFileDialog();
-            dlg.Filter = "All Files (.*)|*.*";
-            dlg.FilterIndex = 0;
-            dlg.Multiselect = false;
-            dlg.InitialDirectory = (this.sourceFile.Text.Trim() == String.Empty) ? Environment.CurrentDirectory : Path.GetDirectoryName(this.sourceFile.Text);
-            if (dlg.ShowDialog() == DialogResult.OK)
+            using (OpenFileDialog dlg = new OpenFileDialog())
             {
-                this.sourceFile.Text = dlg.FileName;
+                dlg.Filter = "All Files (.*)|*.*";
+                dlg.FilterIndex = 0;
+                dlg.Multiselect = false;
+                dlg.InitialDirectory = (this.sourceFile.Text.Trim() == String.Empty) ? Environment.CurrentDirectory : Path.GetDirectoryName(this.sourceFile.Text);
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    this.sourceFile.Text = dlg.FileName;
+                }
             }
         }
 
@@ -157,14 +159,16 @@
         /// <param name="e">event params</param>
         private void keyFileBrowse_Click(object sender, EventArgs e)
         {
-            OpenFileDialog dlg = new OpenFileDialog();
-            dlg.Filter = "All Files (.*)|*.*";
-            dlg.FilterIndex = 0;
-            dlg.Multiselect = false;
-            dlg.InitialDirectory = (this.keyFile.Text.Trim() == String.Empty) ? ((this.sourceFile.Text.Trim() == String.Empty) ? Environment.CurrentDirectory : Path.GetDirectoryName(this.sourceFile.Text)) : Path.GetDirectoryName(this.keyFile.Text);
-            if (dlg.ShowDialog() == DialogResult.OK)
+            using (OpenFileDialog dlg = new OpenFileDialog())
             {
-                this.keyFile.Text = dlg.FileName;
+                dlg.Filter = "All Files (.*)|*.*";
+                dlg.FilterIndex = 0;
+                dlg.Multiselect = false;
+                dlg.InitialDirectory = (this.keyFile.Text.Trim() == String.Empty) ? ((this.sourceFile.Text.Trim() == String.Empty) ? Environment.CurrentDirectory : Path.GetDirectoryName(this.sourceFile.Text)) : Path.GetDirectoryName(this.keyFile.Text);
+                if (dlg.ShowDialog() == DialogResult.OK)
+                {
+                    this.keyFile.Text = dlg.FileName;
+                }
             }
         }
 
